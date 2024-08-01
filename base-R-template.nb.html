@@ -9,10 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Your Name Here" />
+<meta name="author" content="Nandagopal Panicker" />
 
+<meta name="date" content="2024-08-01" />
 
-<title>Fix the title</title>
+<title>Assignment 8: Base R</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1512,7 +1513,7 @@ window.initializeCodeFolding = function(show) {
     $(this).detach().appendTo(div);
 
     // add a show code button right above
-    var showCodeText = $('<span>' + (showThis ? 'Hide' : 'Code') + '</span>');
+    var showCodeText = $('<span>' + (showThis ? 'Hide' : 'Show') + '</span>');
     var showCodeButton = $('<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm code-folding-btn pull-right float-right"></button>');
     showCodeButton.append(showCodeText);
     showCodeButton
@@ -1538,7 +1539,7 @@ window.initializeCodeFolding = function(show) {
     //   * Change text
     //   * add a class for intermediate states styling
     div.on('hide.bs.collapse', function () {
-      showCodeText.text('Code');
+      showCodeText.text('Show');
       showCodeButton.addClass('btn-collapsing');
     });
     div.on('hidden.bs.collapse', function () {
@@ -1683,23 +1684,17 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before {
-content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "\e259";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "";
-border: none;
-}
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "";
+content: "\e258";
 font-family: 'Glyphicons Halflings';
-display: inline-block;
-padding: 10px;
-border-right: 1px solid #ddd;
+border: none;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -1753,9 +1748,9 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Fix the title</h1>
-<h4 class="author">Your Name Here</h4>
-<h4 class="date">Add the date</h4>
+<h1 class="title toc-ignore">Assignment 8: Base R</h1>
+<h4 class="author">Nandagopal Panicker</h4>
+<h4 class="date">08/01/2024</h4>
 
 </div>
 
@@ -1768,6 +1763,26 @@ display: none;
 dataset</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YShpcmlzKVxuaGVhZChpcmlzKVxuYGBgIn0= -->
+<pre class="r"><code>data(iris)
+head(iris)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6NSwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNiDDlyA1XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJvVlJTMDdETUJCMW0wK2JrRkxVbG1NMEV1cUdYYk5BckZnZ0NxSmJrN2l0aFhFaXh3MHN1UWJjQ0FrT3dEMFFRa0lxMkxFZHBhRVNJNDFtL0R4dnh2TjhjVEtmK0hNZkFHQUIyMjRCeXhFcGNLNHVUOGZIQU5odGNXZ0JHM2d5UG9paW9id1Z2aS9jalVhTDBxTGhrN1RuYVBBcTdTMGFhSHdFU29zTzFYM0ZDelRlMWRIVC9LN21CenIySjZVWjN2UlQ5YTNpaDZxYmZxaytGZjdkNEwyby92L0dkL05PcXlkNTVmSTdmVXNZbDZBQ2tWeGtCMHBIaGVhSXB6blVKNzlBTE1keFNsS21FYS9BYklrcGptR2puUk1UbUp0dTFZd0ZqTG5nQXJCcGxsTjRoMHk1bzhGZ2hqSkl3ak5FbDN5bHNUMkZYZU9rZ29KenhQK1VLYXhlMXBsbEtNWnl5TlprajZYM29aa3VCV3MvcW45d1ZhSDEwMWpDVHlDSDRZSUp5bzVGT21uR2NVcEZzL1pRcTE4bnQxZ0Q2SytwSEo2TTQ5V2EzbzZQR3RkV1JwZHladTNqZWpxNnRkeFJyN0ROVzEwanVOQUVVMlJFSnZBR0VkTTVRWVZPOTRVRXBRSmh4akRsWmsrQjVpRlBoWTRHRVQ5dmtISnpzUGtGUFBTVFNIb0RBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Sepal.Length"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[5],"type":["fctr"],"align":["left"]}],"data":[{"1":"5.1","2":"3.5","3":"1.4","4":"0.2","5":"setosa","_rn_":"1"},{"1":"4.9","2":"3.0","3":"1.4","4":"0.2","5":"setosa","_rn_":"2"},{"1":"4.7","2":"3.2","3":"1.3","4":"0.2","5":"setosa","_rn_":"3"},{"1":"4.6","2":"3.1","3":"1.5","4":"0.2","5":"setosa","_rn_":"4"},{"1":"5.0","2":"3.6","3":"1.4","4":"0.2","5":"setosa","_rn_":"5"},{"1":"5.4","2":"3.9","3":"1.7","4":"0.4","5":"setosa","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaXJpc1sxMCw1XSAjIGJ5IGZvbGxvd2luZyB0aGUgKGksaikgcnVsZSBvZiB0aHVtYi5cbmBgYCJ9 -->
+<pre class="r"><code>iris[10,5] # by following the (i,j) rule of thumb.</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIHNldG9zYVxuTGV2ZWxzOiBzZXRvc2EgdmVyc2ljb2xvciB2aXJnaW5pY2FcbiJ9 -->
+<pre><code>[1] setosa
+Levels: setosa versicolor virginica</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1776,6 +1791,14 @@ dataset</h4>
 last 5 rows of that column</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuU3BlY2llc0NvbCA8LSBpcmlzJFNwZWNpZXNcbnRhaWwoU3BlY2llc0NvbCw1KVxuYGBgIn0= -->
+<pre class="r"><code>SpeciesCol &lt;- iris$Species
+tail(SpeciesCol,5)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIHZpcmdpbmljYSB2aXJnaW5pY2EgdmlyZ2luaWNhIHZpcmdpbmljYSB2aXJnaW5pY2FcbkxldmVsczogc2V0b3NhIHZlcnNpY29sb3IgdmlyZ2luaWNhXG4ifQ== -->
+<pre><code>[1] virginica virginica virginica virginica virginica
+Levels: setosa versicolor virginica</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1784,8 +1807,19 @@ last 5 rows of that column</h4>
 greater than 1?</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmlsdGVyZWRfZGF0YSA8LSBpcmlzW2lyaXMkUGV0YWwuV2lkdGggPiAxLCBdXG5hdmdfc2VwYWxfbGVuIDwtIG1lYW4oZmlsdGVyZWRfZGF0YSRTZXBhbC5MZW5ndGgpXG5cbmF2Z19zZXBhbF9sZW5cbmBgYCJ9 -->
+<pre class="r"><code>filtered_data &lt;- iris[iris$Petal.Width &gt; 1, ]
+avg_sepal_len &lt;- mean(filtered_data$Sepal.Length)
+
+avg_sepal_len</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDYuMzI1ODA2XG4ifQ== -->
+<pre><code>[1] 6.325806</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Thus, the average sepal length for flowers with petal widths greater
+than 1 is 6.325806.</p>
 </div>
 </div>
 <div id="question-2-for-loops" class="section level3">
@@ -1797,6 +1831,27 @@ number by 3), and if the number is greater than or equal to 5 print the
 multiple of 2 (multiply the number by 2).</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yIChpIGluIDE6MTApIHtcbiAgaWYgKGk8NSkge1xuICAgIHByaW50KGkqMylcbiAgfSBlbHNlIHtcbiAgICBwcmludChpKjIpXG4gIH1cbn1cbmBgYCJ9 -->
+<pre class="r"><code>for (i in 1:10) {
+  if (i&lt;5) {
+    print(i*3)
+  } else {
+    print(i*2)
+  }
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDNcblsxXSA2XG5bMV0gOVxuWzFdIDEyXG5bMV0gMTBcblsxXSAxMlxuWzFdIDE0XG5bMV0gMTZcblsxXSAxOFxuWzFdIDIwXG4ifQ== -->
+<pre><code>[1] 3
+[1] 6
+[1] 9
+[1] 12
+[1] 10
+[1] 12
+[1] 14
+[1] 16
+[1] 18
+[1] 20</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1810,10 +1865,29 @@ stops (breaks) if you get a number bigger than 3. Do not change the
 value inside set.seeed.</h4>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0LnNlZWQoMTg0KVxuXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0LnNlZWQoMTg0KVxubiA8LSAwXG5cbndoaWxlIChuPDMpIHtcbiAgbiA8LSBybm9ybSgxLCBtZWFuID0gMSwgc2QgPSAyKVxuICBwcmludChuKVxuICBcbiAgaWYobj4zKSB7XG4gICAgYnJlYWtcbiAgfVxufVxuYGBgIn0= -->
 <pre class="r"><code>set.seed(184)
-</code></pre>
+n &lt;- 0
+
+while (n&lt;3) {
+  n &lt;- rnorm(1, mean = 1, sd = 2)
+  print(n)
+  
+  if(n&gt;3) {
+    break
+  }
+}</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuMTE2NzQxOVxuWzFdIDEuNTg4OTUxXG5bMV0gMi40MzY5NDFcblsxXSAwLjkzMjUwN1xuWzFdIDIuNDA4NTA3XG5bMV0gLTEuMjA2MTIzXG5bMV0gLTEuMTU4NDU3XG5bMV0gNC45NjM4OFxuIn0= -->
+<pre><code>[1] 0.1167419
+[1] 1.588951
+[1] 2.436941
+[1] 0.932507
+[1] 2.408507
+[1] -1.206123
+[1] -1.158457
+[1] 4.96388</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1875,12 +1949,14 @@ histogram.</h4>
 with mean 0 and standard deviation 1 and plot a histogram of it.</h5>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0LnNlZWQoMTg0KVxucGxvdE5vcm1hbCA8LSBmdW5jdGlvbihyZXBpdGlvbnMsIG1lYW4sIHNkKXtcbiAgXG59XG5cblxuYGBgIn0= -->
-<pre class="r"><code>set.seed(184)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuc2V0LnNlZWQoMTg0KVxucGxvdE5vcm1hbCA8LSBmdW5jdGlvbihyZXBpdGlvbnMsIG1lYW4sIHNkKXtcbiAgXG59XG5cblxuYGBgXG5gYGAifQ== -->
+<pre class="r"><code>```r
+set.seed(184)
 plotNormal &lt;- function(repitions, mean, sd){
   
 }
 </code></pre>
+<p>```</p>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1903,7 +1979,7 @@ and standard deviation 1 and plot a histogram. Make the bins blue.</p>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRml4IHRoZSB0aXRsZSIKYXV0aG9yOiAiWW91ciBOYW1lIEhlcmUiCmRhdGU6ICJBZGQgdGhlIGRhdGUiCm91dHB1dDogCiAgICBodG1sX25vdGVib29rCi0tLQoKIyMjIFF1ZXN0aW9uIDE6IFN1YnNldHRpbmcKCiMjIyMgU2VsZWN0IHRoZSBlbGVtZW50IGluIDEwdGggcm93IGFuZCA1dGggY29sdW1uIGluIGBpcmlzYCBkYXRhc2V0CgpgYGB7cn0KZGF0YShpcmlzKQoKYGBgCgoKIyMjIyBTZWxlY3QgdGhlIFNwZWNpZXMgY29sdW1uIGluIGBpcmlzYCBkYXRhc2V0IGFuZCBwcmludCB0aGUgbGFzdCA1IHJvd3Mgb2YgdGhhdCBjb2x1bW4KYGBge3J9CgpgYGAKCgojIyMjIFdoYXQgaXMgdGhlIGF2ZXJhZ2UgU2VwYWwgTGVuZ3RoIG9mIGZsb3dlcnMgd2l0aCBQZXRhbCB3aWR0aHMgZ3JlYXRlciB0aGFuIDE/IAoKYGBge3J9CgoKYGBgCgojIyMgUXVlc3Rpb24gMjogRm9yIExvb3BzCgojIyMjIFdyaXRlIGEgYGZvcmAgbG9vcCB0aGF0IGl0ZXJhdGVzIG92ZXIgdGhlIG51bWJlcnMgMSB0byAxMC4gSWYgdGhlIG51bWJlciBsZXNzIHRoYW4gNSBwcmludCB0aGUgbXVsdGlwbGUgb2YgMyAobXVsdGlwbHkgdGhlIG51bWJlciBieSAzKSwgYW5kIGlmIHRoZSBudW1iZXIgaXMgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvIDUgcHJpbnQgdGhlIG11bHRpcGxlIG9mIDIgKG11bHRpcGx5IHRoZSBudW1iZXIgYnkgMikuIAoKYGBge3J9CgpgYGAKCiMjIyBRdWVzdGlvbiAzOiBXaGlsZSBsb29wcwoKIyMjIyBXcml0ZSBhIGB3aGlsZWAgbG9vcCB0aGF0IHByaW50cyBvdXQgcmFuZG9tIG5vcm1hbCBudW1iZXJzIHdpdGggbWVhbiBlcXVhbCAxIGFuZCBzdGFuZGFyZCBkZXZpYXRpb24gMiAodXNlIHJub3JtKCkpIGJ1dCBzdG9wcyAoYnJlYWtzKSBpZiB5b3UgZ2V0IGEgbnVtYmVyIGJpZ2dlciB0aGFuIDMuIERvIG5vdCBjaGFuZ2UgdGhlIHZhbHVlIGluc2lkZSBzZXQuc2VlZWQuCmBgYHtyfQpzZXQuc2VlZCgxODQpCgpgYGAKCiMjIyBRdWVzdGlvbiA0OiBmb3IgbG9vcHMgaW4gZGF0YSB0YWJsZXMKCiMjIyMgVXNlIGEgbmVzdGVkIGZvciBsb29wIHRoYXQgcHJvZHVjZXMgdGhlIGZvbGxvd2luZyBkYXRhIGZyYW1lLiBOYW1lIHRoZSBkYXRhZnJhbWUgIGBDb3VudGluZ2AgYW5kIHRoZSB2YXJpYWJsZXMgKGNvbHVtbnMpICBWMSwgVjIsIFYzLCBhbmQgVjQuICAoVGhlcmUgYXJlIDMgbG9vcHMpLiAKCkhpbnQ6IEZpcnN0IGlkZW50aWZ5IHRoZSBwYXR0ZXJuKHMpIGluIHRoZSB0YWJsZSBiZWZvcmUgeW91IGNyZWF0ZSB0aGUgZm9yIGxvb3AuCgp8IFYxIHwgVjIgfCBWMyB8IFY0IHwgIAp8Oi0tIHw6LS0gfDotLSB8Oi0tIHwKfCAxIHwgMiB8IDMgfCA0IHwgIAp8IDIgfCAzIHwgNCB8IDUgfCAgCnwgMyB8IDQgfCA1IHwgNiB8ICAKCmBgYHtyfQoKYGBgCgojIyMgUXVlc3Rpb24gNTogdXNlciBkZWZpbmVkIGZ1bmN0aW9ucwoKIyMjIyA1QSkgQ29tcGxldGUgdGhlIGZvbGxvd2luZyB1c2VyIGRlZmluZSBmdW5jdGlvbiB0byBnZW5lcmF0ZSBgbmAgcmFuZG9tIG5vcm1hbCBudW1iZXJzIHdpdGggYSBnaXZlbiBtZWFuIGFuZCBzdGFuZGFyZCBkZXZpYXRpb24gYW5kIHBsb3QgYSBoaXN0b2dyYW0gb2YgaXQuIERvIG5vdCBjaGFuZ2UgIHRoZSBzZWVkIG51bWJlciBpbiBzZXQuc2VlZC4gWW91IGNhbiB1c2UgdGhlIGZ1bmN0aW9uIGBoaXN0YCB0byBwbG90IHRoZSBoaXN0b2dyYW0uICAKCiMjIyMjIDVCKSBUaGVuIGNhbGwgdGhlIGZ1bmN0aW9uIHRvIGdlbmVyYXRlIDEwMDAgcmFuZG9tIG5vcm1hbCBudW1iZXJzIHdpdGggbWVhbiAwIGFuZCBzdGFuZGFyZCBkZXZpYXRpb24gMSBhbmQgcGxvdCBhIGhpc3RvZ3JhbSBvZiBpdC4KCmBgYHtyfQpzZXQuc2VlZCgxODQpCnBsb3ROb3JtYWwgPC0gZnVuY3Rpb24ocmVwaXRpb25zLCBtZWFuLCBzZCl7CiAgCn0KCgpgYGAKCiMjIyMjIEV4dHJhIENyZWRpdDogCgpSZXBlYXQgcGFydHMgNUEgYW5kIDVCLCBhbmQgYWRkIAoKMS4gQSB0aXRsZSB0aGF0IHNheSAiSGlzdG9ncmFtIGZyb20gYSBOb3JtYWwoYG1lYW5gLCBgc2RgKSBEaXN0cmlidXRpb24iLCBidXQgdGhlIHVzZXIgZ2l2ZW4gdmFsdWVzIG9mIGBtZWFuYCBhbmQgYHNkYC4KMi4gYW4gYXJndW1lbnQgdG8gY2hhbmdlIHRoZSBjb2xvciBvZiB0aGUgaGlzdG9ncmFtLiAgCgpDYWxsIHRoZSBmdW5jdGlvbiB0byBnZW5lcmF0ZSAxMDAwIHJhbmRvbSBub3JtYWwgbnVtYmVycyB3aXRoIG1lYW4gMCBhbmQgc3RhbmRhcmQgZGV2aWF0aW9uIDEgYW5kIHBsb3QgYSBoaXN0b2dyYW0uIE1ha2UgdGhlIGJpbnMgYmx1ZS4KCmBgYHtyfQoKCgpgYGAK</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFzc2lnbm1lbnQgODogQmFzZSBSIg0KYXV0aG9yOiAiTmFuZGFnb3BhbCBQYW5pY2tlciINCmRhdGU6ICIwOC8wMS8yMDI0Ig0Kb3V0cHV0OiANCiAgICBodG1sX25vdGVib29rDQotLS0NCg0KIyMjIFF1ZXN0aW9uIDE6IFN1YnNldHRpbmcNCg0KIyMjIyBTZWxlY3QgdGhlIGVsZW1lbnQgaW4gMTB0aCByb3cgYW5kIDV0aCBjb2x1bW4gaW4gYGlyaXNgIGRhdGFzZXQNCg0KYGBge3J9DQpkYXRhKGlyaXMpDQpoZWFkKGlyaXMpDQpgYGANCmBgYHtyfQ0KaXJpc1sxMCw1XSAjIGJ5IGZvbGxvd2luZyB0aGUgKGksaikgcnVsZSBvZiB0aHVtYi4NCmBgYA0KDQoNCiMjIyMgU2VsZWN0IHRoZSBTcGVjaWVzIGNvbHVtbiBpbiBgaXJpc2AgZGF0YXNldCBhbmQgcHJpbnQgdGhlIGxhc3QgNSByb3dzIG9mIHRoYXQgY29sdW1uDQpgYGB7cn0NClNwZWNpZXNDb2wgPC0gaXJpcyRTcGVjaWVzDQp0YWlsKFNwZWNpZXNDb2wsNSkNCg0KYGBgDQoNCg0KIyMjIyBXaGF0IGlzIHRoZSBhdmVyYWdlIFNlcGFsIExlbmd0aCBvZiBmbG93ZXJzIHdpdGggUGV0YWwgd2lkdGhzIGdyZWF0ZXIgdGhhbiAxPyANCg0KYGBge3J9DQpmaWx0ZXJlZF9kYXRhIDwtIGlyaXNbaXJpcyRQZXRhbC5XaWR0aCA+IDEsIF0NCmF2Z19zZXBhbF9sZW4gPC0gbWVhbihmaWx0ZXJlZF9kYXRhJFNlcGFsLkxlbmd0aCkNCg0KYXZnX3NlcGFsX2xlbg0KYGBgDQpUaHVzLCB0aGUgYXZlcmFnZSBzZXBhbCBsZW5ndGggZm9yIGZsb3dlcnMgd2l0aCBwZXRhbCB3aWR0aHMgZ3JlYXRlciB0aGFuIDEgaXMgNi4zMjU4MDYuDQoNCg0KIyMjIFF1ZXN0aW9uIDI6IEZvciBMb29wcw0KDQojIyMjIFdyaXRlIGEgYGZvcmAgbG9vcCB0aGF0IGl0ZXJhdGVzIG92ZXIgdGhlIG51bWJlcnMgMSB0byAxMC4gSWYgdGhlIG51bWJlciBsZXNzIHRoYW4gNSBwcmludCB0aGUgbXVsdGlwbGUgb2YgMyAobXVsdGlwbHkgdGhlIG51bWJlciBieSAzKSwgYW5kIGlmIHRoZSBudW1iZXIgaXMgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvIDUgcHJpbnQgdGhlIG11bHRpcGxlIG9mIDIgKG11bHRpcGx5IHRoZSBudW1iZXIgYnkgMikuIA0KDQpgYGB7cn0NCmZvciAoaSBpbiAxOjEwKSB7DQogIGlmIChpPDUpIHsNCiAgICBwcmludChpKjMpDQogIH0gZWxzZSB7DQogICAgcHJpbnQoaSoyKQ0KICB9DQp9DQoNCmBgYA0KDQojIyMgUXVlc3Rpb24gMzogV2hpbGUgbG9vcHMNCg0KIyMjIyBXcml0ZSBhIGB3aGlsZWAgbG9vcCB0aGF0IHByaW50cyBvdXQgcmFuZG9tIG5vcm1hbCBudW1iZXJzIHdpdGggbWVhbiBlcXVhbCAxIGFuZCBzdGFuZGFyZCBkZXZpYXRpb24gMiAodXNlIHJub3JtKCkpIGJ1dCBzdG9wcyAoYnJlYWtzKSBpZiB5b3UgZ2V0IGEgbnVtYmVyIGJpZ2dlciB0aGFuIDMuIERvIG5vdCBjaGFuZ2UgdGhlIHZhbHVlIGluc2lkZSBzZXQuc2VlZWQuDQpgYGB7cn0NCnNldC5zZWVkKDE4NCkNCm4gPC0gMA0KDQp3aGlsZSAobjwzKSB7DQogIG4gPC0gcm5vcm0oMSwgbWVhbiA9IDEsIHNkID0gMikNCiAgcHJpbnQobikNCiAgDQogIGlmKG4+Mykgew0KICAgIGJyZWFrDQogIH0NCn0NCg0KDQpgYGANCg0KIyMjIFF1ZXN0aW9uIDQ6IGZvciBsb29wcyBpbiBkYXRhIHRhYmxlcw0KDQojIyMjIFVzZSBhIG5lc3RlZCBmb3IgbG9vcCB0aGF0IHByb2R1Y2VzIHRoZSBmb2xsb3dpbmcgZGF0YSBmcmFtZS4gTmFtZSB0aGUgZGF0YWZyYW1lICBgQ291bnRpbmdgIGFuZCB0aGUgdmFyaWFibGVzIChjb2x1bW5zKSAgVjEsIFYyLCBWMywgYW5kIFY0LiAgKFRoZXJlIGFyZSAzIGxvb3BzKS4gDQoNCkhpbnQ6IEZpcnN0IGlkZW50aWZ5IHRoZSBwYXR0ZXJuKHMpIGluIHRoZSB0YWJsZSBiZWZvcmUgeW91IGNyZWF0ZSB0aGUgZm9yIGxvb3AuDQoNCnwgVjEgfCBWMiB8IFYzIHwgVjQgfCAgDQp8Oi0tIHw6LS0gfDotLSB8Oi0tIHwNCnwgMSB8IDIgfCAzIHwgNCB8ICANCnwgMiB8IDMgfCA0IHwgNSB8ICANCnwgMyB8IDQgfCA1IHwgNiB8ICANCg0KYGBge3J9DQoNCmBgYA0KDQojIyMgUXVlc3Rpb24gNTogdXNlciBkZWZpbmVkIGZ1bmN0aW9ucw0KDQojIyMjIDVBKSBDb21wbGV0ZSB0aGUgZm9sbG93aW5nIHVzZXIgZGVmaW5lIGZ1bmN0aW9uIHRvIGdlbmVyYXRlIGBuYCByYW5kb20gbm9ybWFsIG51bWJlcnMgd2l0aCBhIGdpdmVuIG1lYW4gYW5kIHN0YW5kYXJkIGRldmlhdGlvbiBhbmQgcGxvdCBhIGhpc3RvZ3JhbSBvZiBpdC4gRG8gbm90IGNoYW5nZSAgdGhlIHNlZWQgbnVtYmVyIGluIHNldC5zZWVkLiBZb3UgY2FuIHVzZSB0aGUgZnVuY3Rpb24gYGhpc3RgIHRvIHBsb3QgdGhlIGhpc3RvZ3JhbS4gIA0KDQojIyMjIyA1QikgVGhlbiBjYWxsIHRoZSBmdW5jdGlvbiB0byBnZW5lcmF0ZSAxMDAwIHJhbmRvbSBub3JtYWwgbnVtYmVycyB3aXRoIG1lYW4gMCBhbmQgc3RhbmRhcmQgZGV2aWF0aW9uIDEgYW5kIHBsb3QgYSBoaXN0b2dyYW0gb2YgaXQuDQoNCmBgYHtyfQ0Kc2V0LnNlZWQoMTg0KQ0KcGxvdE5vcm1hbCA8LSBmdW5jdGlvbihyZXBpdGlvbnMsIG1lYW4sIHNkKXsNCiAgDQp9DQoNCg0KYGBgDQoNCiMjIyMjIEV4dHJhIENyZWRpdDogDQoNClJlcGVhdCBwYXJ0cyA1QSBhbmQgNUIsIGFuZCBhZGQgDQoNCjEuIEEgdGl0bGUgdGhhdCBzYXkgIkhpc3RvZ3JhbSBmcm9tIGEgTm9ybWFsKGBtZWFuYCwgYHNkYCkgRGlzdHJpYnV0aW9uIiwgYnV0IHRoZSB1c2VyIGdpdmVuIHZhbHVlcyBvZiBgbWVhbmAgYW5kIGBzZGAuDQoyLiBhbiBhcmd1bWVudCB0byBjaGFuZ2UgdGhlIGNvbG9yIG9mIHRoZSBoaXN0b2dyYW0uICANCg0KQ2FsbCB0aGUgZnVuY3Rpb24gdG8gZ2VuZXJhdGUgMTAwMCByYW5kb20gbm9ybWFsIG51bWJlcnMgd2l0aCBtZWFuIDAgYW5kIHN0YW5kYXJkIGRldmlhdGlvbiAxIGFuZCBwbG90IGEgaGlzdG9ncmFtLiBNYWtlIHRoZSBiaW5zIGJsdWUuDQoNCmBgYHtyfQ0KDQoNCg0KYGBgDQo=</div>
 
 
 
