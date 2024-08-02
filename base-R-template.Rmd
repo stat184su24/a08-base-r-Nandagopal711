@@ -123,7 +123,13 @@ Repeat parts 5A and 5B, and add
 Call the function to generate 1000 random normal numbers with mean 0 and standard deviation 1 and plot a histogram. Make the bins blue.
 
 ```{r}
+set.seed(184)
+plotNormal <- function(repitions, mean, sd, color) {
+  rand_num <- rnorm(repitions, mean, sd)
+  hist(rand_num, 
+       main = paste("Histogram from a Normal(", mean, ", ", sd, ") Distribution", sep = ""),
+       col = color)
+}
 
-
-
+plotNormal(1000, 0, 1, "blue")
 ```
